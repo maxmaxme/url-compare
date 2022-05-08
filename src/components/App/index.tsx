@@ -3,8 +3,8 @@ import { Diff } from '../Diff';
 import styles from './index.css';
 
 export const App = () => {
-  const [url1, setUrl1] = useState('https://vk.com/url?p=2');
-  const [url2, setUrl2] = useState('https://vk.com/url2?p=2&n=3');
+  const [url1, setUrl1] = useState('');
+  const [url2, setUrl2] = useState('');
 
   return (
     <div>

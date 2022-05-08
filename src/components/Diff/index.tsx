@@ -34,7 +34,7 @@ export const Diff = ({
         })}
       </tbody>
     </table>;
-  } catch {
-    return <div>Invalid url</div>;
+  } catch (e: any) {
+    return <div>Error: {e.message}</div>;
   }
 };

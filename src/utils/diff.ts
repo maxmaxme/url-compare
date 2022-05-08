@@ -25,6 +25,9 @@ type Same = 'equal' | 'different' | 'empty'
 type Response = {[key: string]: { description: string; values: (string|null)[]; same: Same; }}
 
 export const getDiff = (url1: string, url2: string): Response => {
+  if (!url1.length || !url2.length) {
+    return {};
+  }
   const url1Parsed = new URL(url1);
   const url2Parsed = new URL(url2);
 
