@@ -40,7 +40,7 @@ export const getDiff = (url1: string, url2: string): Response => {
     host: areSame('host', url1Parsed.host, url2Parsed.host),
     pathname: areSame('url', url1Parsed.pathname, url2Parsed.pathname),
     ...paramKeys.reduce<Response>((prev, paramName) => {
-      prev['param_' + paramName] = areSame('param ' + paramName, url1Parsed.searchParams.get(paramName), url2Parsed.searchParams.get(paramName));
+      prev['param_' + paramName] = areSame(`?${paramName}=`, url1Parsed.searchParams.get(paramName), url2Parsed.searchParams.get(paramName));
       return prev;
     }, {}),
   };
