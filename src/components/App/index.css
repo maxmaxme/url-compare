@@ -1,0 +1,12 @@
+.input {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  display: block;
+  padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:not(:last-child) {
+  margin-bottom: 4px;
+}

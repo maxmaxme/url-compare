@@ -1,12 +1,26 @@
-.row {
+.table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.rowEqual td {
-    border: 1px solid green;
+.table td {
+    padding: 2px;
+    border: 1px solid #ddd;
 }
-.rowDifferent td {
-    border: 1px solid orange;
+
+.input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px;
+    border: none;
 }
-.rowEmpty td {
-    border: 1px solid red;
+
+.rowEqual .input {
+    color: green;
+}
+.rowDifferent .input {
+    color: orange;
+}
+.rowEmpty .input {
+    color: red;
 }

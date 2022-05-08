@@ -15,22 +15,24 @@ export const Diff = ({
   try {
     const diff = getDiff(url1, url2);
 
-    return <table>
-      {Object.keys(diff).map((key) => {
-        const value = diff[key];
-        return <tr key={key} className={cn(styles.row, {
-          [styles.rowEqual]: value.same === 'equal',
-          [styles.rowEmpty]: value.same === 'empty',
-          [styles.rowDifferent]: value.same === 'different',
-        })}>
-          <td>{value.description}</td>
-          {value.values.map((v, i) => (
-            <td key={`${key}_${i}`}>
-              <input value={v || ''} />
-            </td>
-          ))}
-        </tr>;
-      })}
+    return <table className={styles.table}>
+      <tbody>
+        {Object.keys(diff).map((key) => {
+          const value = diff[key];
+          return <tr key={key} className={cn({
+            [styles.rowEqual]: value.same === 'equal',
+            [styles.rowEmpty]: value.same === 'empty',
+            [styles.rowDifferent]: value.same === 'different',
+          })}>
+            <td>{value.description}</td>
+            {value.values.map((v, i) => (
+              <td key={`${key}_${i}`}>
+                <input className={styles.input} readOnly value={v || ''} />
+              </td>
+            ))}
+          </tr>;
+        })}
+      </tbody>
     </table>;
   } catch {
     return <div>Invalid url</div>;
