@@ -1,3 +1,3 @@
-# Template
+# URL compare tool
 
-Empty template with React, Typescript, ESLint and Jest
+https://maxmaxme.github.io/url-compare
