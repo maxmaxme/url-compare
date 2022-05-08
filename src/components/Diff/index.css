@@ -1,0 +1,12 @@
+.row {
+}
+
+.rowEqual td {
+    border: 1px solid green;
+}
+.rowDifferent td {
+    border: 1px solid orange;
+}
+.rowEmpty td {
+    border: 1px solid red;
+}
